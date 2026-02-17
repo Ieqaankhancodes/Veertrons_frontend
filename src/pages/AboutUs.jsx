@@ -1,4 +1,5 @@
-﻿import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaRocket, FaAward, FaUsers, FaCogs, FaGraduationCap, FaIndustry, FaLinkedin, FaGithub, FaCertificate, FaUniversity, FaHandshake, FaEye, FaBullseye } from 'react-icons/fa';
 import aboutImg from '../assets/about.avif';
