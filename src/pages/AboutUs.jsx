@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+﻿import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaRocket, FaAward, FaUsers, FaCogs, FaGraduationCap, FaIndustry, FaLinkedin, FaGithub, FaCertificate, FaUniversity, FaHandshake, FaEye, FaBullseye } from 'react-icons/fa';
 import aboutImg from '../assets/about.avif';
@@ -356,15 +356,15 @@ const AboutUs = () => {
             <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               We look forward to collaborating with VTU and its affiliated colleges to empower the next generation of engineers.
             </p>
-            <a 
-              href="/contact"
+            <Link 
+              to="/contact"
               className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold rounded-2xl hover:from-yellow-300 hover:to-yellow-400 transition-all shadow-lg shadow-yellow-400/25"
             >
               <span>Connect With Us</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -682,12 +682,12 @@ const AboutUs = () => {
               Whether you're a student looking for internships or a company seeking engineering solutions, we'd love to hear from you.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="/services/internships" className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-600/30">
+              <Link to="/services/internships" className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-lg shadow-blue-600/30">
                 Explore Internships
-              </a>
-              <a href="/services/sales-engineering" className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-bold py-4 px-10 rounded-2xl transition-all duration-300">
+              </Link>
+              <Link to="/services/sales-engineering" className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-bold py-4 px-10 rounded-2xl transition-all duration-300">
                 Our Services
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
