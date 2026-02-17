@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
   FaGithub,
@@ -77,7 +77,7 @@ const About = () => {
 
         {/* SECTION 1 */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div
+          <motion.div
             variants={fadeLeft}
             initial="hidden"
             whileInView="show"
@@ -113,7 +113,7 @@ const About = () => {
               </div>
               <p className="text-sm text-slate-300">{story.mission}</p>
             </div>
-          </div>
+          </motion.div>
 
           <div>
             <img
@@ -178,7 +178,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
-              <div
+              <motion.div
                 key={i}
                 {...hoverCard}
                 className="relative h-80 rounded-3xl overflow-hidden"
@@ -202,7 +202,7 @@ const About = () => {
                     {project.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
