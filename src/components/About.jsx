@@ -77,7 +77,7 @@ const About = () => {
 
         {/* SECTION 1 */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
+          <div
             variants={fadeLeft}
             initial="hidden"
             whileInView="show"
@@ -113,7 +113,7 @@ const About = () => {
               </div>
               <p className="text-sm text-slate-300">{story.mission}</p>
             </div>
-          </motion.div>
+          </div>
 
           <div>
             <img
@@ -178,7 +178,7 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
-              <motion.div
+              <div
                 key={i}
                 {...hoverCard}
                 className="relative h-80 rounded-3xl overflow-hidden"
@@ -202,7 +202,7 @@ const About = () => {
                     {project.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
