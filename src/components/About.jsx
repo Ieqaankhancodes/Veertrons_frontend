@@ -5,6 +5,7 @@ import about from '../assets/about.avif';
 import project1 from '../assets/b7670e83-a46b-436a-a207-275f067a7343.avif';
 import project2 from '../assets/bc09167b-2ec5-4926-b7ed-78b73a82a962.avif';
 import temp from '../assets/default.jpg';
+import { motion } from "framer-motion";
 
 const About = () => {
     const navigate = useNavigate();
