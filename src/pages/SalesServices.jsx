@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { FaTools, FaCogs, FaIndustry, FaClipboardCheck, FaFlask, FaPaperPlane, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHome, FaBuilding, FaStore } from 'react-icons/fa';
+import { FaTools, FaCogs, FaIndustry, FaClipboardCheck, FaFlask, FaPaperPlane, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHome, FaBuilding, FaStore, FaWrench } from 'react-icons/fa';
+import service1 from '../assets/service/1.jpeg';
+import service2 from '../assets/service/2.jpeg';
+import service3 from '../assets/service/3.jpeg';
+import service4 from '../assets/service/4.jpeg';
 
 const SalesServices = () => {
   const navigate = useNavigate();
@@ -170,6 +174,73 @@ const SalesServices = () => {
                 <h4 className="text-white font-bold text-lg mb-2">Quality Parts</h4>
                 <p className="text-slate-400 text-sm">We use genuine components for all repairs and replacements</p>
               </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* KLE Sheshgiri TECH University Service Gallery */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="max-w-5xl mx-auto mb-20"
+        >
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-[3rem] p-10 md:p-12"
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <FaWrench className="text-blue-600 text-3xl" />
+              <h2 className="text-3xl font-black text-slate-900">Servicing in KLE Sheshgiri TECH University Belgaum</h2>
+            </div>
+            <p className="text-slate-600 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">
+              Our expert technicians provide professional repair and maintenance services at KLE Sheshgiri TECH University Belgaum. We ensure optimal performance and longevity of all equipment through our skilled technical team.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={service1} 
+                  alt="KLE University Service 1" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={service2} 
+                  alt="KLE University Service 2" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={service3} 
+                  alt="KLE University Service 3" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
+              >
+                <img 
+                  src={service4} 
+                  alt="KLE University Service 4" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-2 text-blue-600">
+              <FaWrench />
+              <span className="font-bold text-slate-700">Expert Technicians</span>
             </div>
           </div>
         </motion.div>
