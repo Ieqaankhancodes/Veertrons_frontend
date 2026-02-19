@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { FaTools, FaCogs, FaIndustry, FaClipboardCheck, FaFlask, FaPaperPlane, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHome, FaBuilding, FaStore, FaWrench } from 'react-icons/fa';
+import { FaTools, FaCogs, FaIndustry, FaClipboardCheck, FaFlask, FaPaperPlane, FaPhone, FaEnvelope, FaMapMarkerAlt, FaHome, FaBuilding, FaStore, FaWrench, FaTimes, FaSearchPlus } from 'react-icons/fa';
 import service1 from '../assets/service/1.jpeg';
 import service2 from '../assets/service/2.jpeg';
 import service3 from '../assets/service/3.jpeg';
@@ -10,6 +10,7 @@ import service4 from '../assets/service/4.jpeg';
 
 const SalesServices = () => {
   const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
   const [formData, setFormData] = useState({
     companyName: '',
     contactPerson: '',
@@ -183,59 +184,44 @@ const SalesServices = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="max-w-5xl mx-auto mb-20"
+          className="max-w-6xl mx-auto mb-20"
         >
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-[3rem] p-10 md:p-12"
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-[3rem] p-8 md:p-12"
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <FaWrench className="text-blue-600 text-3xl" />
-              <h2 className="text-3xl font-black text-slate-900">Servicing in KLE Sheshgiri TECH University Belgaum</h2>
+            <div className="flex flex-col items-center text-center mb-8">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white text-2xl mb-4">
+                <FaWrench />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">Servicing in KLE Sheshgiri TECH University Belgaum</h2>
+              <p className="text-slate-600 text-lg leading-relaxed max-w-3xl">
+                Servicing in E&E and EC Department servicing the digital equipments like CRO, Multimeter, DC power supply, DC voltmeters ammeteres, DC preset power supply, signal generator
+              </p>
             </div>
-            <p className="text-slate-600 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">
-              Our expert technicians provide professional repair and maintenance services at KLE Sheshgiri TECH University Belgaum. We ensure optimal performance and longevity of all equipment through our skilled technical team.
-            </p>
             
+            {/* Professional Photo Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={service1} 
-                  alt="KLE University Service 1" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={service2} 
-                  alt="KLE University Service 2" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={service3} 
-                  alt="KLE University Service 3" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="aspect-square rounded-2xl overflow-hidden shadow-lg"
-              >
-                <img 
-                  src={service4} 
-                  alt="KLE University Service 4" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+              {[service1, service2, service3, service4].map((img, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                  onClick={() => setSelectedImage(img)}
+                >
+                  <img 
+                    src={img} 
+                    alt={`KLE University Service ${index + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                    <span className="text-white font-medium flex items-center gap-2">
+                      <FaSearchPlus /> View
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
             <div className="mt-8 flex items-center justify-center gap-2 text-blue-600">
@@ -244,6 +230,38 @@ const SalesServices = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Image Lightbox Modal */}
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-5xl w-full max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white hover:text-red-500 transition-colors p-2 flex items-center gap-2"
+              >
+                <FaTimes className="text-2xl" />
+                <span className="text-lg">Cancel</span>
+              </button>
+              <img
+                src={selectedImage}
+                alt="Full preview"
+                className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
 
         {/* Lab Setup Section */}
         <motion.div 
