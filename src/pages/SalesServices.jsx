@@ -307,7 +307,7 @@ const SalesServices = () => {
                       <p className="text-slate-400 text-sm">Phone</p>
                       <p className="text-white font-bold">+91 9108500593</p>
                       <p className="text-white font-bold">+91 9421278091</p>
-                      <p className="text-white font-bold">+91 9110669727</p>
+                     
 
                       
                     </div>
