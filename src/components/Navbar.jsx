@@ -40,8 +40,8 @@ const Navbar = () => {
         <header
             className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
                 scrolled 
-                ? "bg-white/70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] py-3" 
-                : "bg-transparent py-6"
+                ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] py-3" 
+                : "bg-gradient-to-b from-white/90 to-transparent py-6"
             }`}
         >
             <nav className="max-w-7xl mx-auto px-8 flex items-center justify-between">

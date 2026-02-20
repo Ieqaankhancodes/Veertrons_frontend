@@ -7,10 +7,21 @@ import service1 from '../assets/service/1.jpeg';
 import service2 from '../assets/service/2.jpeg';
 import service3 from '../assets/service/3.jpeg';
 import service4 from '../assets/service/4.jpeg';
+import service2_1 from '../assets/service2/1.jpeg';
+import service2_2 from '../assets/service2/2.jpeg';
+import service2_3 from '../assets/service2/3.jpeg';
+import service2_4 from '../assets/service2/4.jpeg';
+import service2_5 from '../assets/service2/5.jpeg';
+import service2_6 from '../assets/service2/6.jpeg';
+import service2_7 from '../assets/service2/7.jpeg';
+import service2_8 from '../assets/service2/8.jpeg';
+import service2_9 from '../assets/service2/9.jpeg';
+import service2_10 from '../assets/service2/10.jpeg';
 
 const SalesServices = () => {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedServiceType, setSelectedServiceType] = useState('all');
   const [formData, setFormData] = useState({
     companyName: '',
     contactPerson: '',
@@ -63,6 +74,33 @@ const SalesServices = () => {
     }
   ];
 
+  // Combined service images for gallery
+  const serviceImages = [
+    { id: 1, src: service1, title: 'CRO Servicing', category: 'Testing Equipment' },
+    { id: 2, src: service2, title: 'Multimeter Calibration', category: 'Testing Equipment' },
+    { id: 3, src: service3, title: 'Power Supply Repair', category: 'Power Equipment' },
+    { id: 4, src: service4, title: 'DC Voltmeter Service', category: 'Measurement' },
+    { id: 5, src: service2_1, title: 'Signal Generator', category: 'Testing Equipment' },
+    { id: 6, src: service2_2, title: 'Lab Equipment Maintenance', category: 'Laboratory' },
+    { id: 7, src: service2_3, title: 'Digital Oscilloscope', category: 'Testing Equipment' },
+    { id: 8, src: service2_4, title: 'Circuit Board Repair', category: 'Electronics' },
+    { id: 9, src: service2_5, title: 'Power Supply Unit', category: 'Power Equipment' },
+    { id: 10, src: service2_6, title: 'Industrial Equipment', category: 'Industrial' },
+    { id: 11, src: service2_7, title: 'Component Replacement', category: 'Electronics' },
+    { id: 12, src: service2_8, title: 'Equipment Calibration', category: 'Testing Equipment' },
+    { id: 13, src: service2_9, title: 'Laboratory Setup', category: 'Laboratory' },
+    { id: 14, src: service2_10, title: 'Final Testing', category: 'Quality Check' },
+  ];
+
+  const serviceTypes = ['all', 'Testing Equipment', 'Power Equipment', 'Measurement', 'Laboratory', 'Electronics', 'Industrial', 'Quality Check'];
+
+  const filteredImages = selectedServiceType === 'all' 
+    ? serviceImages 
+    : serviceImages.filter(img => img.category === selectedServiceType);
+
+  const handleFilterChange = (type) => {
+    setSelectedServiceType(type);
+  };
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -107,11 +145,23 @@ const SalesServices = () => {
         <meta property="og:title" content="Sales & Services | Veertrons Engineering" />
         <meta property="og:description" content="Wide range of components and equipment including electronics, electrical, computer parts, home automation, B2B and B2C solutions with repair services." />
       </Helmet>
-      <div className="pt-32 pb-20 bg-white min-h-screen">
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} 
-      />
+      <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
+        {/* Animated Gradient Background - Hero Style */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+          {/* Animated mesh gradient */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+            <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+            <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+          </div>
+        </div>
+
+        {/* Grid Pattern Overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10"
+          style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} 
+        />
+        <div className="absolute top-1/2 left-[5%] w-6 h-6 border-2 border-indigo-300 rounded-full animate-pulse opacity-40" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
@@ -179,54 +229,83 @@ const SalesServices = () => {
           </div>
         </motion.div>
 
-        {/* KLE Sheshgiri TECH University Service Gallery */}
+        {/* KLE Sheshgiri TECH University Service Gallery with Filter */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="max-w-6xl mx-auto mb-20"
+          className="max-w-7xl mx-auto mb-24"
         >
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-[3rem] p-8 md:p-12"
+          <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 rounded-[3rem] p-8 md:p-12"
           >
-            <div className="flex flex-col items-center text-center mb-8">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white text-2xl mb-4">
+            <div className="flex flex-col items-center text-center mb-10">
+              <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white text-3xl mb-5 shadow-2xl shadow-blue-600/30">
                 <FaWrench />
               </div>
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">Servicing in KLE Sheshgiri TECH University Belgaum</h2>
+              <span className="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs mb-3">Our Work</span>
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">Servicing Gallery</h2>
               <p className="text-slate-600 text-lg leading-relaxed max-w-3xl">
-                Servicing in E&E and EC Department servicing the digital equipments like CRO, Multimeter, DC power supply, DC voltmeters ammeteres, DC preset power supply, signal generator
+                Professional servicing and maintenance of digital equipment including CRO, Multimeters, DC Power Supplies, Signal Generators, and more at KLE Sheshgiri TECH University Belgaum
               </p>
             </div>
             
-            {/* Professional Photo Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {[service1, service2, service3, service4].map((img, index) => (
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {serviceTypes.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => handleFilterChange(type)}
+                  className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 ${
+                    selectedServiceType === type
+                      ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
+                      : 'bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-600 border border-slate-200'
+                  }`}
+                >
+                  {type === 'all' ? 'All Services' : type}
+                </button>
+              ))}
+            </div>
+            
+            {/* Professional Masonry Grid Layout */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {filteredImages.map((img, index) => (
                 <motion.div 
-                  key={index}
+                  key={img.id}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg cursor-pointer"
-                  onClick={() => setSelectedImage(img)}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                  onClick={() => setSelectedImage(img.src)}
                 >
+                  {/* Image */}
                   <img 
-                    src={img} 
-                    alt={`KLE University Service ${index + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    src={img.src} 
+                    alt={img.title} 
+                    className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <span className="text-white font-medium flex items-center gap-2">
-                      <FaSearchPlus /> View
-                    </span>
+                  
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                    <span className="text-white font-bold text-sm">{img.title}</span>
+                    <span className="text-blue-300 text-xs">{img.category}</span>
+                  </div>
+                  
+                  {/* View Icon */}
+                  <div className="absolute top-3 right-3 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-0 group-hover:scale-100">
+                    <FaSearchPlus className="text-blue-600 text-lg" />
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-8 flex items-center justify-center gap-2 text-blue-600">
-              <FaWrench />
-              <span className="font-bold text-slate-700">Expert Technicians</span>
+            {/* Image Count Badge */}
+            <div className="mt-8 flex items-center justify-center gap-2">
+              <div className="px-6 py-3 bg-white rounded-full shadow-md border border-slate-100">
+                <span className="text-slate-600 font-medium">Showing</span>
+                <span className="text-blue-600 font-bold mx-2">{filteredImages.length}</span>
+                <span className="text-slate-600 font-medium">of {serviceImages.length} service images</span>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -259,6 +338,9 @@ const SalesServices = () => {
                 alt="Full preview"
                 className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
               />
+              <div className="mt-4 text-center">
+                <p className="text-white font-medium">Click anywhere to close</p>
+              </div>
             </motion.div>
           </motion.div>
         )}

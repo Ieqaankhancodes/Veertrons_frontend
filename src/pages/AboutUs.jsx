@@ -95,10 +95,11 @@ const AboutUs = () => {
         <meta property="og:title" content="About Us | Veertrons Engineering" />
         <meta property="og:description" content="Learn about Veertrons Engineering and our mission to create industry-ready engineers." />
       </Helmet>
-      <div className="bg-white min-h-screen">
+     
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto px-6">
+      <section className="pt-32 pb-20 relative">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,7 +117,15 @@ const AboutUs = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+          <div className="absolute inset-0 opacity-40">
+            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+            <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          </div>
+        </div>
+        
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
@@ -204,7 +213,15 @@ const AboutUs = () => {
       </section>
 
       {/* Timeline/Milestones Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+            <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          </div>
+        </div>
+
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -245,7 +262,15 @@ const AboutUs = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24">
+      <section className="py-24 relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/30">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+            <div className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          </div>
+        </div>
+
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -482,7 +507,15 @@ const AboutUs = () => {
       </section>
 
       {/* Strengthening Industry-Academia Ties - MOU Section */}
-      <section className="py-24">
+      <section className="py-24 relative overflow-hidden">
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+            <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+          </div>
+        </div>
+
         <div className="container mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -693,7 +726,6 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </section>
-    </div>
     </>
   );
 };

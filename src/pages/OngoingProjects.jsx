@@ -57,9 +57,22 @@ const OngoingProjects = () => {
             </Helmet>
 
             {/* Hero Section */}
-            <section className="relative min-h-[50vh] flex items-center bg-[#fafafa] overflow-hidden pt-28 pb-16">
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-amber-100/40 rounded-full blur-[100px] pointer-events-none" />
+            <section className="relative min-h-[50vh] flex items-center overflow-hidden pt-28 pb-16">
+                {/* Animated Gradient Background - Hero Style */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+                    {/* Animated mesh gradient */}
+                    <div className="absolute inset-0 opacity-30">
+                        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+                        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+                        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+                    </div>
+                </div>
+
+                {/* Grid Pattern Overlay */}
+                <div 
+                    className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} 
+                />
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <motion.div
@@ -82,7 +95,16 @@ const OngoingProjects = () => {
             </section>
 
             {/* Projects Grid */}
-            <section className="relative py-24 bg-white overflow-hidden">
+            <section className="relative py-24 overflow-hidden">
+                {/* Animated Gradient Background */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+                    <div className="absolute inset-0 opacity-30">
+                        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+                        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+                        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+                    </div>
+                </div>
+
                 <div className="container mx-auto px-6 relative z-10">
                     <motion.div
                         variants={containerVariants}
@@ -148,8 +170,14 @@ const OngoingProjects = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="relative py-24 bg-slate-900 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20" />
+            <section className="relative py-24 overflow-hidden">
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+                    <div className="absolute inset-0 opacity-30">
+                        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+                        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+                        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+                    </div>
+                </div>
                 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <motion.div

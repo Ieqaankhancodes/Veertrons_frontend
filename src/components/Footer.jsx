@@ -19,11 +19,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white pt-20 pb-10 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-      <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-radial from-blue-900/20 to-transparent rounded-full blur-3xl opacity-50" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
