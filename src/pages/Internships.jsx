@@ -51,9 +51,17 @@ const Internships = () => {
           className="max-w-4xl"
         >
           <h1 className="text-5xl font-black text-slate-900 mb-6">Student Internships</h1>
-          <p className="text-xl text-slate-600 mb-12">
+          <p className="text-xl text-slate-600 mb-6">
             Hands-on technical training designed to turn students into industry-ready engineers.
           </p>
+          <a 
+            href="https://vtu.internyet.in/companies/veertrons-engineering-equipment-sales-services-llp" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors mb-12"
+          >
+            Explore us on VTU Portal
+          </a>
         </motion.div>
 
         {/* Modules Grid Section with Gradient */}
@@ -129,9 +137,19 @@ const Internships = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           <h2 className="text-3xl font-bold mb-4 relative z-10">Ready to start?</h2>
           <p className="mb-8 opacity-90 relative z-10">Apply now to join our next batch of student interns.</p>
-          <Link to="/internship/apply" className="relative z-10 inline-block bg-white text-blue-600 px-10 py-4 rounded-2xl font-bold hover:bg-slate-100 transition-colors shadow-lg">
-            Apply Now
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+            <Link to="/internship/apply" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-2xl font-bold hover:bg-slate-100 transition-colors shadow-lg">
+              Apply Now
+            </Link>
+            <a 
+              href="https://vtu.internyet.in/companies/veertrons-engineering-equipment-sales-services-llp" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-transparent border-2 border-white text-white px-10 py-4 rounded-2xl font-bold hover:bg-white hover:text-blue-600 transition-colors"
+            >
+              Explore us on VTU Portal
+            </a>
+          </div>
         </div>
       </div>
     </div>
