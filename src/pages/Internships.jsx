@@ -39,20 +39,16 @@ const Internships = () => {
         />
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Hero Section with Gradient */}
+        {/* Hero Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative p-10 rounded-3xl bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 mb-12"
+          className="max-w-4xl"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl" />
-          <div className="relative z-10">
-            <h1 className="text-5xl font-black text-slate-900 mb-6">Student Internships</h1>
-            <p className="text-xl text-slate-600 mb-6">
-              Hands-on technical training designed to turn students into industry-ready engineers.
-            </p>
-          </div>
+          <h1 className="text-5xl font-black text-slate-900 mb-6">Student Internships</h1>
+          <p className="text-xl text-slate-600 mb-12">
+            Hands-on technical training designed to turn students into industry-ready engineers.
+          </p>
         </motion.div>
 
         {/* Modules Grid Section with Gradient */}

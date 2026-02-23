@@ -266,23 +266,23 @@ const SalesServices = () => {
               ))}
             </div>
             
-            {/* Professional Masonry Grid Layout */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {/* Pinterest-style Masonry Grid Layout */}
+            <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6">
               {filteredImages.map((img, index) => (
                 <motion.div 
                   key={img.id}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer break-inside-avoid"
                   onClick={() => setSelectedImage(img.src)}
                 >
                   {/* Image */}
                   <img 
                     src={img.src} 
                     alt={img.title} 
-                    className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   
                   {/* Hover Overlay */}
