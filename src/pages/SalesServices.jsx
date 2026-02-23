@@ -17,6 +17,10 @@ import service2_7 from '../assets/service2/7.jpeg';
 import service2_8 from '../assets/service2/8.jpeg';
 import service2_9 from '../assets/service2/9.jpeg';
 import service2_10 from '../assets/service2/10.jpeg';
+import sample1 from '../assets/samples/sample1.jpeg';
+import sample2 from '../assets/samples/sample2.jpeg';
+import sample3 from '../assets/samples/sample3.jpeg';
+import sample4 from '../assets/samples/sample4.jpeg';
 
 const SalesServices = () => {
   const navigate = useNavigate();
@@ -90,6 +94,14 @@ const SalesServices = () => {
     { id: 12, src: service2_8, title: 'Equipment Calibration', category: 'Testing Equipment' },
     { id: 13, src: service2_9, title: 'Laboratory Setup', category: 'Laboratory' },
     { id: 14, src: service2_10, title: 'Final Testing', category: 'Quality Check' },
+  ];
+
+  // Sample electronics and communication kits images
+  const sampleImages = [
+    { id: 1, src: sample1, title: 'Transistor Characteristics CE Configuration Kit' },
+    { id: 2, src: sample2, title: 'N-Channel MOSFET Kit' },
+    { id: 3, src: sample3, title: 'Experimental Kit for Rectifiers with Filter' },
+    { id: 4, src: sample4, title: 'Decimal to BCD Converter Kit' },
   ];
 
   const serviceTypes = ['all', 'Testing Equipment', 'Power Equipment', 'Measurement', 'Laboratory', 'Electronics', 'Industrial', 'Quality Check'];
@@ -196,6 +208,49 @@ const SalesServices = () => {
           ))}
         </div>
 
+        {/* Electronics Kits Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+          className="max-w-6xl mx-auto mb-20"
+        >
+          <div className="bg-white rounded-[3rem] p-8 md:p-10 shadow-xl shadow-slate-200/60 border border-slate-100"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-black text-slate-900 mb-4">Basic Electronics & Communication Kits</h2>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                We sale basic electronics and communication kits - Below images are samples of the kits we provide. 
+              </p>
+            </div>
+            
+            {/* Sample Images - One by one on mobile, grid on desktop */}
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:md:grid-cols-4 gap-4 md:gap-6">
+              {sampleImages.map((img, index) => (
+                <motion.div 
+                  key={img.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                  onClick={() => setSelectedImage(img.src)}
+                >
+                  <img 
+                    src={img.src} 
+                    alt={img.title} 
+                    className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {/* Always show overlay on mobile, hover on desktop */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-bold text-sm">{img.title}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         {/* Repair & Maintenance Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -224,6 +279,10 @@ const SalesServices = () => {
               <div className="bg-white/10 rounded-2xl p-6">
                 <h4 className="text-white font-bold text-lg mb-2">Quality Parts</h4>
                 <p className="text-slate-400 text-sm">We use genuine components for all repairs and replacements</p>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-6">
+                <h4 className="text-white font-bold text-lg mb-2">We provide Test Reports </h4>
+                <p className="text-slate-400 text-sm">We provide detailed test reports for all repaired and maintained equipment</p>
               </div>
             </div>
           </div>
