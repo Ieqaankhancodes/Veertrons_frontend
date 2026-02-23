@@ -82,7 +82,7 @@ const Internships = () => {
 
           <div className="relative z-10 p-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-black text-slate-900 mb-4">Placement Offerings</h2>
+              <h2 className="text-4xl font-black text-slate-900 mb-4">Placement Assistance</h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
                 Our internship program comes with guaranteed placement assistance and industry connections to kickstart your career.
               </p>
@@ -95,29 +95,13 @@ const Internships = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">Job Placement</h3>
+                <h3 className="text-lg font-bold text-white mb-2">Job Placement Assistance</h3>
                 <p className="text-white/80 text-sm">Direct interviews with leading engineering companies and startups in our network.</p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-400/80 to-blue-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Industry Certification</h3>
-                <p className="text-white/80 text-sm">Earn recognized certifications that boost your resume and career prospects.</p>
-              </div>
+              
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-400/80 to-amber-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">Networking</h3>
-                <p className="text-white/80 text-sm">Connect with industry professionals, alumni, and potential employers.</p>
-              </div>
+              
 
               <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-400/80 to-purple-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">

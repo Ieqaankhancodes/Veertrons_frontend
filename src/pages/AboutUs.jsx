@@ -11,6 +11,7 @@ import temp from '../assets/default.jpg';
 // import sourabh from '../assets/sourabh.jpg';
 // import vaishnavi from '../assets/vaishnavi.jpg';
 // import saad from '../assets/saad.jpg';
+import goa_visit from '../assets/goa_1.jpg';
 
 const AboutUs = () => {
   const story = {
@@ -538,16 +539,13 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <div className="relative overflow-hidden shadow-2xl">
                   <img 
                     src={mouImage} 
                     alt="MOU Signing - Veertrons & Bhartesh Polytechnic" 
                     className="w-full h-auto"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
-                {/* Decorative element */}
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-600/20 rounded-full blur-2xl" />
               </motion.div>
 
               {/* Content */}
@@ -611,6 +609,59 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Goa Polytechnic Visit Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center max-w-3xl mx-auto mb-10 md:mb-12"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaUniversity className="text-2xl text-blue-600" />
+              <span className="text-blue-600 font-bold tracking-widest uppercase text-xs md:text-sm">Empowering the Next Generation of Engineers</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold md:font-black text-slate-900">Goa Polytechnic Visit</h3>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="w-full md:w-1/3"
+              >
+                <div className="relative overflow-hidden shadow-xl">
+                  <img 
+                    src={goa_visit} 
+                    alt="Veertrons CEO at Goa Polytechnic" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="w-full md:w-2/3 space-y-4"
+              >
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                  We are pleased to share that the Founder, CEO, and Managing Director of VEERTRONS ENGINEERING EQUIPMENT SALES AND SERVICES LLP, Belagavi, recently visited Goa Polytechnic, Goa.
+                </p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                  It was an insightful session filled with high-energy interactions. Engaging with the diploma students provided a fantastic platform to discuss industry trends, technical evolution, and the bridging of the gap between academia and professional engineering services.
+                </p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                  At VEERTRONS, we believe in nurturing young talent and sharing our industry expertise to help shape the innovators of tomorrow. Thank you to the faculty and students of Goa Polytechnic for the warm welcome and the engaging dialogue!
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Short RCU Section - After MOU */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
@@ -634,7 +685,7 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 className="w-full md:w-1/3"
               >
-                <div className="relative rounded-[2rem] overflow-hidden shadow-xl">
+                <div className="relative overflow-hidden shadow-xl">
                   <img 
                     src={rcuImage} 
                     alt="Veertrons Team with RCU Registrar" 
