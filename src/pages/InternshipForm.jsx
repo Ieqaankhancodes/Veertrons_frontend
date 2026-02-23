@@ -22,9 +22,16 @@ const InternshipForm = () => {
     'IoT Ecosystems',
     'Embedded Systems',
     'Advanced IoT',
-    'ML for Engineers',
+    'AI ML for Engineers',
     'PLC Programming',
-    'Java Fullstack'
+    'Java Fullstack (Upcoming)',
+    'ML using IoT(Upcoming Free)',
+    'Robotics in Construction(Upcoming Free)',
+    'IoT for Road Construction(Upcoming Free)',
+    'Firmware IoT (Upcoming)',
+    'Robotics with IoT (Upcoming)'  
+
+    
   ];
 
   const handleChange = (e) => {

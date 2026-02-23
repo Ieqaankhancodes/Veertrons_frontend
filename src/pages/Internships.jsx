@@ -8,9 +8,14 @@ const Internships = () => {
     { title: "IoT Ecosystems", desc: "Connecting hardware to the cloud using MQTT and HTTP." },
     { title: "Embedded Systems", desc: "Developing firmware for embedded devices and microcontrollers." },
     { title: "Advanced IoT", desc: "Integrating AI and edge computing into IoT solutions." },
-    { title: "ML for Engineers", desc: "Applying machine learning techniques to engineering problems." },
-    { title: "PLC Programming", desc: "Automating industrial processes with PLCs and SCADA systems." },
-    { title: "Java Fullstack", desc: "Building end-to-end web applications using Java, Spring Boot, React, and database technologies." }
+    { title: "AI ML using Python", desc: "Applying machine learning techniques to engineering problems." },
+    { title: "PLC Programming and Automation", desc: "Automating industrial processes with PLCs and SCADA systems." },
+    { title: "Java Fullstack (Upcoming)", desc: "Building end-to-end web applications using Java, Spring Boot, React, and database technologies." },
+    { title: "ML using IoT(Upcoming Free)", desc: "Free module on applying machine learning techniques to IoT data for predictive analytics and smart decision-making." },
+    { title: "Robotics in Construction(Upcoming Free)", desc: "Free module on the application of robotics and automation technologies in the construction industry, covering topics like autonomous machinery, drone surveying, and robotic bricklaying." },
+    { title: "IoT for Road Construction(Upcoming Free)", desc: "Free module on leveraging artificial intelligence techniques to solve complex engineering challenges, including predictive maintenance, optimization, and intelligent control systems." },
+    { title: "Firmware IoT (Upcoming)", desc: "In-depth training on developing firmware for IoT devices, covering real-time operating systems, low-level programming, and hardware interfacing." },
+    { title: "Robotics with IoT (Upcoming)", desc: "Comprehensive training on integrating robotics with IoT technologies, covering topics like autonomous navigation, sensor integration, and robotic control systems." },
   ];
 
   return (
@@ -59,7 +64,7 @@ const Internships = () => {
           <div className="grid md:grid-cols-3 gap-8 mt-12 relative z-10">
             {modules.map((m, i) => (
               <div key={i} className="p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold mb-6">0{i+1}</div>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold mb-6">{i+1}</div>
                 <h3 className="text-xl font-bold mb-3 text-slate-900">{m.title}</h3>
                 <p className="text-slate-600 text-sm">{m.desc}</p>
               </div>
