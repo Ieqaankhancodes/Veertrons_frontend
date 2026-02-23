@@ -39,26 +39,104 @@ const Internships = () => {
         />
 
       <div className="container mx-auto px-6 relative z-10">
+        {/* Hero Section with Gradient */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-4xl"
+          className="relative p-10 rounded-3xl bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 mb-12"
         >
-          <h1 className="text-5xl font-black text-slate-900 mb-6">Student Internships</h1>
-          <p className="text-xl text-slate-600 mb-12">
-            Hands-on technical training designed to turn students into industry-ready engineers.
-          </p>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl" />
+          <div className="relative z-10">
+            <h1 className="text-5xl font-black text-slate-900 mb-6">Student Internships</h1>
+            <p className="text-xl text-slate-600 mb-6">
+              Hands-on technical training designed to turn students into industry-ready engineers.
+            </p>
+          </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
-          {modules.map((m, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold mb-6">0{i+1}</div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">{m.title}</h3>
-              <p className="text-slate-600 text-sm">{m.desc}</p>
-            </div>
-          ))}
+        {/* Modules Grid Section with Gradient */}
+        <div className="relative p-10 rounded-3xl bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 -z-10 mb-8">
+          <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-indigo-300/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl" />
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-12 relative z-10">
+            {modules.map((m, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-200/60 transition-all duration-300 hover:-translate-y-1">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold mb-6">0{i+1}</div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">{m.title}</h3>
+                <p className="text-slate-600 text-sm">{m.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Placement Offerings Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 relative"
+        >
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl -z-10" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-indigo-400/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+
+          <div className="relative z-10 p-10">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-black text-slate-900 mb-4">Placement Offerings</h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                Our internship program comes with guaranteed placement assistance and industry connections to kickstart your career.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-400/80 to-emerald-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Job Placement</h3>
+                <p className="text-white/80 text-sm">Direct interviews with leading engineering companies and startups in our network.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-400/80 to-blue-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Industry Certification</h3>
+                <p className="text-white/80 text-sm">Earn recognized certifications that boost your resume and career prospects.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-400/80 to-amber-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Networking</h3>
+                <p className="text-white/80 text-sm">Connect with industry professionals, alumni, and potential employers.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-400/80 to-purple-600/80 backdrop-blur-sm border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Career Guidance</h3>
+                <p className="text-white/80 text-sm">One-on-one mentoring and career counseling to help you land your dream job.</p>
+              </div>
+            </div>
+
+            
+          </div>
+        </motion.div>
 
         <div className="mt-20 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-700 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
           {/* Decorative gradient elements */}
