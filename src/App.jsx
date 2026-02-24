@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import InternshipForm from "./pages/InternshipForm";
 import ContactUs from "./pages/ContactUs";
 import OngoingProjects from "./pages/OngoingProjects";
+import AddOnLabs from "./pages/AddOnLabs";
 
 // Landing Page Layout
 const Home = () => (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/projects" element={<OngoingProjects />} />
           <Route path="/services/internships" element={<Internships />} />
           <Route path="/services/sales-engineering" element={<SalesServices />} />
+          <Route path="/services/add-on-labs" element={<AddOnLabs />} />
           <Route path="/internship/apply" element={<InternshipForm />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>

@@ -12,6 +12,7 @@ const navLinks = [
 const serviceLinks = [
     { name: "Internship", path: "/services/internships" },
     { name: "Sales & Services", path: "/services/sales-engineering" },
+    { name: "Add on Labs", path: "/services/add-on-labs" },
 ];
 
 const Navbar = () => {
