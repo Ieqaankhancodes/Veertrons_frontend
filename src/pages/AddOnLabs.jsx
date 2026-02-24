@@ -133,6 +133,21 @@ const AddOnLabs = () => {
             ))}
           </div>
 
+          {/* Syllabus Info Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="max-w-3xl mx-auto mb-20"
+          >
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-8 md:p-10 text-center">
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-4">We Provide Syllabus for Add on Labs</h2>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                We provide comprehensive syllabus for Robotics, Advanced IoT, and PLC add-on labs. Our curriculum is designed to give students practical knowledge and hands-on experience with industry-relevant technologies.
+              </p>
+            </div>
+          </motion.div>
+
           {/* CTA Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

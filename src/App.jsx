@@ -14,6 +14,7 @@ import InternshipForm from "./pages/InternshipForm";
 import ContactUs from "./pages/ContactUs";
 import OngoingProjects from "./pages/OngoingProjects";
 import AddOnLabs from "./pages/AddOnLabs";
+import PCBFabrication from "./pages/PCBFabrication";
 
 // Landing Page Layout
 const Home = () => (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/services/internships" element={<Internships />} />
           <Route path="/services/sales-engineering" element={<SalesServices />} />
           <Route path="/services/add-on-labs" element={<AddOnLabs />} />
+          <Route path="/services/pcb-fabrication" element={<PCBFabrication />} />
           <Route path="/internship/apply" element={<InternshipForm />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
