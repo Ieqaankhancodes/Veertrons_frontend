@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { FaRocket, FaAward, FaUsers, FaCogs, FaGraduationCap, FaIndustry, FaLinkedin, FaGithub, FaCertificate, FaUniversity, FaHandshake, FaEye, FaBullseye } from 'react-icons/fa';
 import aboutImg from '../assets/about.avif';
 import mouImage from '../assets/MOU_BP.jpg';
+import mouNippani from '../assets/MOU_Nippani.jpg';
 import rcuImage from '../assets/rcu.jpg';
 import vtu from '../assets/vtu.png';
 import temp from '../assets/default.jpg';
@@ -12,7 +13,6 @@ import temp from '../assets/default.jpg';
 // import vaishnavi from '../assets/vaishnavi.jpg';
 // import saad from '../assets/saad.jpg';
 import goa_visit from '../assets/goa_1.jpg';
-
 const AboutUs = () => {
   const story = {
     vision: "To be a global leader in engineering innovation, bridging the gap between academia and industry by delivering cutting-edge solutions in IoT, Embedded Systems, and PCB Design while nurturing the next generation of engineers.",
@@ -602,6 +602,100 @@ const AboutUs = () => {
 
                 <p className="text-slate-600 leading-relaxed pt-4 border-t border-slate-200">
                   We look forward to a fruitful collaboration that empowers the students of Bhartesh Polytechnic and contributes to the thriving engineering ecosystem in Belagavi.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VSM's Somashekhar R Kothiwale Institute of Technology MOU Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-blue-50">
+        <div className="container mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaHandshake className="text-3xl text-indigo-600" />
+              <span className="text-indigo-600 font-bold tracking-widest uppercase text-sm">New MOU with VSM's Somashekhar R Kothiwale Institute of Technology</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-black text-slate-900">MOU with VSM's Somashekhar R Kothiwale Institute of Technology</h3>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* MOU Image */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="relative overflow-hidden shadow-2xl">
+                  <img 
+                    src={mouNippani} 
+                    alt="MOU Signing - Veertrons & VSM's Somashekhar R Kothiwale Institute of Technology" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Content */}
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <div>
+                  <h4 className="text-2xl font-black text-slate-900 mb-2">
+                    Veertrons & VSM's Somashekhar R Kothiwale Institute of Technology, Nipani
+                  </h4>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    We are excited to announce that Veertrons Engineering Equipment Sales and Services LLP, Belagavi, has signed a Memorandum of Understanding (MOU) with VSM's Somashekhar R Kothiwale Institute of Technology, Nipani, Karnataka.
+                  </p>
+                </div>
+
+                <p className="text-slate-600 leading-relaxed">
+                  This strategic partnership aims to strengthen the bond between academia and industry, providing students with practical exposure and hands-on experience in cutting-edge engineering technologies.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 bg-indigo-50 rounded-2xl">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center flex-shrink-0">
+                      <FaGraduationCap className="text-white text-lg" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900">Technical Skill Enhancement</h5>
+                      <p className="text-sm text-slate-600">Providing students with access to industry-standard equipment and practical training.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-indigo-50 rounded-2xl">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center flex-shrink-0">
+                      <FaUniversity className="text-white text-lg" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900">Industry-Academia Collaboration</h5>
+                      <p className="text-sm text-slate-600">Bridging the gap between theoretical knowledge and industrial applications.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 bg-indigo-50 rounded-2xl">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center flex-shrink-0">
+                      <FaCogs className="text-white text-lg" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900">Internship & Workshop Opportunities</h5>
+                      <p className="text-sm text-slate-600">Organizing workshops, training sessions, and internship programs for students.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-slate-600 leading-relaxed pt-4 border-t border-slate-200">
+                  We look forward to a mutually beneficial collaboration that will empower the students of VSM's Somashekhar R Kothiwale Institute of Technology and contribute to the growth of the engineering ecosystem in Karnataka.
                 </p>
               </motion.div>
             </div>
