@@ -12,6 +12,7 @@ const Feedback = () => {
 
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loadingText, setLoadingText] = useState('Submitting...');
 
   const handleChange = (e) => {
     setFormData({
@@ -28,34 +29,41 @@ const Feedback = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
-    
+    setLoadingText('Submitting...');
+
+    const loadingTimeout = setTimeout(() => {
+      setLoadingText('Waking up server... (can take up to a minute)');
+    }, 3000);
+
     try {
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       if (response.ok) {
-        setSubmitStatus({ 
-          type: 'success', 
+        setSubmitStatus({
+          type: 'success',
           message: 'Thank you for your feedback! We appreciate your input.'
         });
         setFormData({ name: '', email: '', rating: 5, feedback: '' });
       } else {
-        setSubmitStatus({ 
-          type: 'error', 
+        setSubmitStatus({
+          type: 'error',
           message: 'Unable to submit feedback. Please try again.'
         });
       }
     } catch (error) {
       console.error('Error submitting feedback:', error);
-      setSubmitStatus({ 
-        type: 'error', 
+      setSubmitStatus({
+        type: 'error',
         message: 'Unable to submit feedback. Please check if the server is running and try again.'
       });
     } finally {
+      clearTimeout(loadingTimeout);
       setIsSubmitting(false);
+      setLoadingText('Submitting...');
     }
   };
 
@@ -68,9 +76,9 @@ const Feedback = () => {
         {/* Background decorations */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -88,7 +96,7 @@ const Feedback = () => {
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-slate-200/50 p-8 md:p-12 border border-white/50">
               {/* Success/Error Message */}
               {submitStatus.message && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className={`p-6 rounded-2xl mb-8 ${submitStatus.type === 'success' ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}
@@ -108,7 +116,7 @@ const Feedback = () => {
                     <p className={`flex-1 ${submitStatus.type === 'success' ? 'text-green-700' : 'text-red-700'}`}>
                       {submitStatus.message}
                     </p>
-                    <button 
+                    <button
                       onClick={() => setSubmitStatus({ type: '', message: '' })}
                       className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white/50 transition-colors text-slate-500"
                     >
@@ -134,7 +142,7 @@ const Feedback = () => {
                         onClick={() => handleRating(star)}
                         className="p-2 transition-transform hover:scale-110 focus:outline-none"
                       >
-                        <svg 
+                        <svg
                           className={`w-10 h-10 ${star <= formData.rating ? 'text-yellow-400 fill-current' : 'text-slate-300'}`}
                           viewBox="0 0 24 24"
                         >
@@ -167,7 +175,7 @@ const Feedback = () => {
                       placeholder="John Doe"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 mb-2">
                       Email Address
@@ -210,7 +218,7 @@ const Feedback = () => {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                       </svg>
-                      Submitting...
+                      <span className="text-sm sm:text-base">{loadingText}</span>
                     </>
                   ) : (
                     <>

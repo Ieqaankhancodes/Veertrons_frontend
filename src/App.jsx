@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -33,6 +34,12 @@ const Home = () => (
 );
 
 function App() {
+  useEffect(() => {
+    // Ping the backend to wake up the server (useful for Render free tier)
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/health`)
+      .catch((err) => console.log('Server warmup ping failed:', err));
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
